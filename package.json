@@ -1,7 +1,7 @@
 {
   "name": "mesto-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Java Script server tools in action",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,11 @@
     "server\u001b[B\u001b[B\u001b[B\u001b[B\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dmesto",
     "server-side"
   ],
-  "author": "",
+  "author": {
+    "name" : "A. Dubovik",
+    "email" : "dubovik02@yandex.ru",
+    "url" : "https://github.com/dubovik02"
+  },
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.5.0",
