@@ -7,15 +7,15 @@ const cardsFilePath = path.join(__dirname, '../data/cards.json');
 router.get('/', (req, res) => {
 
   res.set({ 'content-type': 'application/json; charset=utf-8' });
-  try {
-    const cardsList = fileReader.createReadStream(cardsFilePath);
-    cardsList.pipe(res);
-  }
-  catch(err) {
-    console.log(err);
-    res.status(500).send({message: err});
-  }
+  fileReader.readFile(cardsFilePath, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send({message: `Ошибка сервера при чтении файла: ${cardsFilePath}`});
+      return;
+    }
+    res.send(data);
 
+  });
 
 });
 

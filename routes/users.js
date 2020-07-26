@@ -7,14 +7,15 @@ const usersFilePath = path.join(__dirname, '../data/users.json');
 router.get('/', (req, res) => {
 
   res.set({ 'content-type': 'application/json; charset=utf-8' });
-  try {
-    const usersList = fileReader.createReadStream(usersFilePath);
-    usersList.pipe(res);
-  }
-  catch(err) {
-    console.log(err);
-    res.status(500).send({message: err});
-  }
+  fileReader.readFile(usersFilePath, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send({message: `Ошибка сервера при чтении файла: ${usersFilePath}`});
+      return;
+    }
+    res.send(data);
+
+  });
 
 })
 

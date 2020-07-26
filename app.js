@@ -9,6 +9,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 app.use('/cards', cardsRouter);
+app.use((req,res) => {
+  res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
+});
 
 app.listen(PORT, () => {
   console.log('Server has been started ...');
