@@ -12,5 +12,4 @@ A. Dubovik YPraktikum Sprint 12
     npm run dev
 #### To run production version on localhost:3000 run:
     npm run start
-### [Current version](https://dubovik02.github.io/mesto-server)
 ### [Source code](https://github.com/dubovik02/mesto-server)
